@@ -6,7 +6,7 @@ Proyecto escolar para la materia **Cultura Empresarial**, Instituto Tecnológico
 
 > **Prototipo de demostración:** sesión simulada, sin base de datos. Todos los datos (nombres, cédulas, teléfonos, reseñas y precios) son ficticios.
 
-**Demo en línea:** https://nutrimatch-demo.vercel.app
+**Demo en línea:** https://nutrimatch-tepic.vercel.app
 
 ---
 
