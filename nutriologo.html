@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Consultorio | NutriMatch</title>
+  <meta name="theme-color" content="#10343F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%2310343F'/%3E%3Cpath d='M10.5 29.5c0-11 6.5-18 19-18.5-.4 12.4-7.4 18.6-19 18.5z' fill='%235FB0C9'/%3E%3Cpath d='M10.5 29.5l9.2-9.2' stroke='%23EEF6F0' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='22.3' cy='17.7' r='3.2' fill='%23E8913A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script>NM.auth.requerir('nutriologo');</script>
+</head>
+<body class="tema-nutri">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <div class="n-app">
+    <aside class="n-lateral" id="n-lateral" aria-label="Menú del consultorio">
+      <a href="#resumen" aria-label="NutriMatch, ir al resumen" data-logo></a>
+      <span class="n-etiqueta-rol"><svg class="ico" style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>Panel de nutriólogo</span>
+      <nav class="n-nav" id="n-nav" aria-label="Principal">
+        <span class="n-nav-indicador" id="n-nav-indicador" aria-hidden="true"></span>
+        <a href="#resumen" data-vista="resumen"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M7.5 14.5l3.5-4 3 2.5 5-6"/></svg>Resumen</a>
+        <a href="#agenda" data-vista="agenda"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agenda<span class="cuenta" id="cuenta-pendientes" hidden></span></a>
+        <a href="#pacientes" data-vista="pacientes"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 2.9-5.5 6.5-5.5s6.5 2 6.5 5.5M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.6c2.3.6 3.6 2.4 3.6 5.4"/></svg>Pacientes</a>
+        <a href="#perfil" data-vista="perfil"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>Mi perfil público</a>
+        <a href="#resenas" data-vista="resenas"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/></svg>Reseñas</a>
+        <a href="#suscripcion" data-vista="suscripcion"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg>Suscripción</a>
+      </nav>
+      <div class="n-lateral-pie">
+        <div class="n-cuenta" id="n-cuenta"></div>
+        <button type="button" class="btn btn-claro btn-sm" data-reiniciar-demo>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>Reiniciar demo
+        </button>
+        <button type="button" class="btn btn-claro btn-sm" id="btn-salir">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4M16 16l4-4-4-4M20 12H10"/></svg>Cerrar sesión
+        </button>
+      </div>
+    </aside>
+    <div class="n-velo" id="n-velo" aria-hidden="true"></div>
+
+    <div class="n-contenido">
+      <header class="n-barra">
+        <button type="button" class="btn-icono" id="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="n-lateral">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a href="#resumen" aria-label="NutriMatch, ir al resumen" data-logo></a>
+        <span id="n-barra-avatar" style="margin-left:auto"></span>
+      </header>
+
+      <main id="contenido" class="app-main" style="min-height:auto">
+        <div class="contenedor">
+          <div id="vista" class="vista"></div>
+        </div>
+      </main>
+
+      <footer class="app-pie">
+        <div class="contenedor">
+          <p><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Prototipo de demostración: sesión simulada, sin base de datos.</p>
+          <button type="button" class="btn btn-fantasma btn-sm" data-reiniciar-demo>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>Reiniciar demo
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/ui.js"></script>
+  <script src="js/imc.js"></script>
+  <script src="js/nutriologo.js"></script>
+</body>
+</html>
