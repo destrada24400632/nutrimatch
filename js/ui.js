@@ -77,14 +77,22 @@
       cuerpo + '</svg>';
   }
 
-  /* Logo de NutriMatch: hoja cuya nervadura se une con un punto (el "match") */
+  /* Logo de NutriMatch: manzana en dos mitades (paciente y nutriólogo) que se
+     encuentran. Mismo dibujo que brand/nutrimatch-icono.svg */
+  var MANZANA = 'M24 16.2C20.3 13.4 12.6 13.3 11.4 21.4C10.3 29.8 15.8 38.2 20.3 38.2C21.9 38.2 22.9 37.4 24 37.4C25.1 37.4 26.1 38.2 27.7 38.2C32.2 38.2 37.7 29.8 36.6 21.4C35.4 13.3 27.7 13.4 24 16.2Z';
+  var logosPintados = 0;
   function logo(conTexto) {
-    var marca = '<svg class="logo-marca" viewBox="0 0 40 40" width="36" height="36" aria-hidden="true" focusable="false">' +
-      '<rect width="40" height="40" rx="12" fill="#0F3D2A"/>' +
-      '<path d="M10.5 29.5c0-11 6.5-18 19-18.5-.4 12.4-7.4 18.6-19 18.5z" fill="#3FA56B"/>' +
-      '<path d="M10.5 29.5l9.2-9.2" stroke="#EEF6F0" stroke-width="2.2" stroke-linecap="round"/>' +
-      '<circle cx="22.3" cy="17.7" r="3.2" fill="#E8913A" stroke="#0F3D2A" stroke-width="1.4"/>' +
-      '</svg>';
+    var n = ++logosPintados;
+    var marca = '<svg class="logo-marca" viewBox="0 0 48 48" width="36" height="36" aria-hidden="true" focusable="false">' +
+      '<defs><linearGradient id="nm-f' + n + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#155234"/><stop offset="1" stop-color="#0C3322"/></linearGradient>' +
+        '<clipPath id="nm-i' + n + '"><rect width="23.1" height="48"/></clipPath><clipPath id="nm-d' + n + '"><rect x="24.9" width="24" height="48"/></clipPath></defs>' +
+      '<rect width="48" height="48" rx="14" fill="url(#nm-f' + n + ')"/>' +
+      '<g transform="translate(0 1.2)">' +
+        '<g class="mitad-a"><path d="' + MANZANA + '" fill="#F6F4EC" clip-path="url(#nm-i' + n + ')"/></g>' +
+        '<g class="mitad-b"><path d="' + MANZANA + '" fill="#6DBE8E" clip-path="url(#nm-d' + n + ')"/></g>' +
+        '<path d="M24 15.4C24 12.6 24.8 10.6 26.2 9.2" fill="none" stroke="#F6F4EC" stroke-width="1.9" stroke-linecap="round"/>' +
+        '<path class="logo-hoja" d="M25.6 11.6C26.9 8.2 30.4 7 33.2 7.7C32.5 10.9 29.1 12.6 25.6 11.6Z" fill="#E8913A"/>' +
+      '</g></svg>';
     if (!conTexto) return marca;
     return '<span class="logo">' + marca + '<span class="logo-texto">Nutri<span>Match</span></span></span>';
   }

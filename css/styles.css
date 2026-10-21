@@ -424,10 +424,16 @@ strong { font-weight: 600; }
    LOGO
    ========================================================================= */
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
-.logo-marca { transition: transform .5s var(--ease-resorte); }
-a:hover .logo-marca { transform: rotate(-8deg) scale(1.05); }
+.logo-marca { border-radius: 29%; transition: transform .5s var(--ease-resorte), box-shadow .3s; }
+.logo-marca .mitad-a, .logo-marca .mitad-b { transition: transform .55s var(--ease-resorte); }
+.logo-marca .logo-hoja { transform-box: fill-box; transform-origin: 0% 100%; transition: transform .6s var(--ease-resorte); }
+a:hover .logo-marca { transform: translateY(-1px); }
+a:hover .logo-marca .mitad-a { transform: translateX(.9px); }
+a:hover .logo-marca .mitad-b { transform: translateX(-.9px); }
+a:hover .logo-marca .logo-hoja { transform: rotate(-14deg); }
+.sobre-oscuro .logo-marca, .n-lateral .logo-marca, .pub-cabecera:not(.solida) .logo-marca { box-shadow: 0 0 0 1.5px rgba(246, 244, 236, .18); }
 .logo-texto { font-family: var(--fuente-titulo); font-size: 1.45rem; letter-spacing: -.01em; color: var(--tinta); line-height: 1; }
-.logo-texto span { color: var(--verde-700); }
+.logo-texto span { color: var(--verde-700); font-style: italic; margin-left: .045em; }
 .sobre-oscuro .logo-texto { color: #F6F4EC; }
 .sobre-oscuro .logo-texto span { color: #7FD0A0; }
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="512" height="512">
+  <!-- NutriMatch: manzana en dos mitades (paciente y nutriólogo) que se encuentran -->
+  <defs>
+    <linearGradient id="nm-fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#155234"/>
+      <stop offset="1" stop-color="#0C3322"/>
+    </linearGradient>
+    <clipPath id="nm-izq"><rect x="0" y="0" width="23.1" height="48"/></clipPath>
+    <clipPath id="nm-der"><rect x="24.9" y="0" width="24" height="48"/></clipPath>
+    <path id="nm-manzana" d="M24 16.2C20.3 13.4 12.6 13.3 11.4 21.4C10.3 29.8 15.8 38.2 20.3 38.2C21.9 38.2 22.9 37.4 24 37.4C25.1 37.4 26.1 38.2 27.7 38.2C32.2 38.2 37.7 29.8 36.6 21.4C35.4 13.3 27.7 13.4 24 16.2Z"/>
+  </defs>
+  <rect width="48" height="48" rx="14" fill="url(#nm-fondo)"/>
+  <g transform="translate(0 1.2)">
+    <use href="#nm-manzana" fill="#F6F4EC" clip-path="url(#nm-izq)"/>
+    <use href="#nm-manzana" fill="#6DBE8E" clip-path="url(#nm-der)"/>
+    <path d="M24 15.4C24 12.6 24.8 10.6 26.2 9.2" fill="none" stroke="#F6F4EC" stroke-width="1.9" stroke-linecap="round"/>
+    <path d="M25.6 11.6C26.9 8.2 30.4 7 33.2 7.7C32.5 10.9 29.1 12.6 25.6 11.6Z" fill="#E8913A"/>
+  </g>
+</svg>
