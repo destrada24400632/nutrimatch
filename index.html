@@ -13,52 +13,45 @@
   <link rel="apple-touch-icon" href="brand/nutrimatch-icono.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="tema-publico">
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
   <header class="pub-cabecera" id="cabecera">
-    <div class="contenedor">
+    <div class="pub-barra">
       <a href="#inicio" class="logo-enlace" aria-label="NutriMatch, ir al inicio" data-logo></a>
       <nav class="pub-nav" aria-label="Secciones">
         <a href="#como-funciona">Cómo funciona</a>
-        <a href="#imc">Calculadora IMC</a>
-        <a href="#nutriologos">Para nutriólogos</a>
+        <a href="#imc">IMC</a>
+        <a href="#nutriologos">Nutriólogos</a>
         <a href="#ventajas">Ventajas</a>
       </nav>
       <div id="cabecera-accion">
-        <button type="button" class="btn btn-secundario btn-entrar" data-abrir-acceso>Iniciar sesión</button>
+        <button type="button" class="btn btn-primario btn-sm btn-entrar" data-abrir-acceso>Iniciar sesión</button>
       </div>
     </div>
   </header>
 
   <main id="contenido">
     <!-- HERO -->
-    <section class="hero sobre-oscuro" id="inicio" aria-labelledby="hero-titulo">
-      <div class="contenedor hero-rejilla">
-        <div class="hero-texto">
-          <h1 id="hero-titulo">El nutriólogo indicado para tu objetivo</h1>
-          <p class="hero-bajada">Calcula tu IMC, filtra por lo que quieres lograr y agenda con nutriólogos de Tepic con cédula verificada. Para ti es gratis.</p>
-          <div class="hero-acciones">
-            <a href="#imc" class="btn btn-naranja btn-lg"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8.5 10.5a3.5 3.5 0 0 1 7 0M12 10.5l1.6-2"/></svg>Calcular mi IMC</a>
-            <button type="button" class="btn btn-claro btn-lg" data-abrir-acceso data-hero-accion>Iniciar sesión</button>
-          </div>
-          <p class="hero-nota">
-            <span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Cédula profesional verificada</span>
-            <span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Gratis para pacientes</span>
-            <span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Solo nutrición</span>
-          </p>
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="contenedor hero-centro">
+        <p class="hero-insignia"><span class="punto-vivo" aria-hidden="true"></span>Nutriólogos con cédula verificada en Tepic</p>
+        <h1 id="hero-titulo" data-palabras>El nutriólogo indicado para tu objetivo</h1>
+        <p class="hero-bajada">Calcula tu IMC, filtra por lo que quieres lograr y agenda tu cita. Para ti es gratis.</p>
+        <div class="hero-acciones">
+          <a href="#imc" class="btn btn-naranja btn-lg"><span data-ico="bascula"></span>Calcular mi IMC</a>
+          <button type="button" class="btn btn-claro btn-lg" data-abrir-acceso data-hero-accion>Iniciar sesión</button>
         </div>
+      </div>
 
-        <div>
-          <p class="sr-only">Ejemplo: eliges un objetivo, como bajar de peso, y NutriMatch te muestra un nutriólogo verificado con su calificación y su próximo horario libre.</p>
-          <div class="match" id="match" aria-hidden="true">
-            <ul class="match-objetivos" id="match-objetivos"></ul>
-            <svg class="match-hilo" id="match-hilo"><path d=""/><circle r="4" cx="-10" cy="-10"/></svg>
-            <div class="match-tarjeta"><div class="mt-cuerpo" id="match-cuerpo"></div></div>
-          </div>
+      <div class="contenedor">
+        <p class="sr-only">Ejemplo: eliges un objetivo, como bajar de peso, y NutriMatch te muestra un nutriólogo verificado con su calificación y su próximo horario libre.</p>
+        <div class="match" id="match" aria-hidden="true">
+          <ul class="match-objetivos" id="match-objetivos"></ul>
+          <div class="match-tarjeta"><div class="mt-cuerpo" id="match-cuerpo"></div></div>
         </div>
       </div>
     </section>
@@ -67,30 +60,30 @@
     <section class="seccion" id="como-funciona" aria-labelledby="cf-titulo">
       <div class="contenedor">
         <div class="seccion-cabeza" data-revelar>
-          <h2 id="cf-titulo">Dos lados, una misma cita</h2>
-          <p>NutriMatch conecta a quien busca orientación con quien la da, y le quita el papeleo a los dos.</p>
+          <h2 id="cf-titulo">Así funciona</h2>
+          <p>Una misma cita, dos lados: quien busca orientación y quien la da.</p>
         </div>
         <div class="pasos-rejilla">
           <article class="pista-pasos pista-usuario" data-revelar>
             <div class="pista-cabeza">
-              <span class="rol-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></span>
-              <div><h3>Para ti</h3><small>Gratis, sin tarjeta</small></div>
+              <span class="rol-ico"><span data-ico="usuario"></span></span>
+              <div><h3>Para ti</h3><small>Gratis</small></div>
             </div>
             <ol class="pasos">
-              <li class="paso"><div><h4>Calcula tu IMC y elige tu objetivo</h4><p>Bajar de peso, ganar masa muscular, nutrición deportiva, controlar diabetes o hipertensión, o simplemente comer mejor.</p></div></li>
-              <li class="paso"><div><h4>Compara nutriólogos verificados</h4><p>Calificación de otros pacientes, distancia, precio de consulta y la insignia Verificado.</p></div></li>
-              <li class="paso"><div><h4>Agenda y califica</h4><p>Elige un día y una hora libres. Después de la consulta, deja tu reseña para ayudar a otros.</p></div></li>
+              <li class="paso"><div><h4>Elige tu objetivo</h4><p>Calcula tu IMC y dinos qué quieres lograr.</p></div></li>
+              <li class="paso"><div><h4>Compara perfiles</h4><p>Calificación, distancia, precio y cédula verificada.</p></div></li>
+              <li class="paso"><div><h4>Agenda y califica</h4><p>Reserva en minutos y deja tu reseña después.</p></div></li>
             </ol>
           </article>
-          <article class="pista-pasos pista-nutri" data-revelar style="--retraso:.1s">
+          <article class="pista-pasos pista-nutri" data-revelar style="--retraso:.12s">
             <div class="pista-cabeza">
-              <span class="rol-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
+              <span class="rol-ico"><span data-ico="expediente"></span></span>
               <div><h3>Para nutriólogos</h3><small>Suscripción de 1, 6 o 12 meses</small></div>
             </div>
             <ol class="pasos">
-              <li class="paso"><div><h4>Crea tu perfil y sube tu cédula</h4><p>Revisamos tu cédula profesional y tu perfil recibe la insignia Verificado.</p></div></li>
-              <li class="paso"><div><h4>Recibe pacientes nuevos</h4><p>Apareces cuando alguien busca tu especialidad cerca de tu consultorio.</p></div></li>
-              <li class="paso"><div><h4>Da seguimiento en un solo lugar</h4><p>Agenda, expediente digital y evolución de peso de cada paciente, cita por cita.</p></div></li>
+              <li class="paso"><div><h4>Verifica tu cédula</h4><p>Tu perfil recibe la insignia Verificado.</p></div></li>
+              <li class="paso"><div><h4>Recibe pacientes</h4><p>Apareces cuando buscan tu especialidad cerca.</p></div></li>
+              <li class="paso"><div><h4>Da seguimiento</h4><p>Agenda y expediente con evolución de peso.</p></div></li>
             </ol>
           </article>
         </div>
@@ -99,28 +92,12 @@
 
     <!-- IMC -->
     <section class="seccion seccion-imc" id="imc" aria-labelledby="imc-titulo">
-      <div class="contenedor imc-rejilla">
-        <div data-revelar>
-          <div class="seccion-cabeza" style="margin-bottom:24px">
-            <h2 id="imc-titulo">¿Cómo está tu IMC?</h2>
-            <p>Sin registro. El índice de masa corporal es un primer indicador; con él te sugerimos un objetivo para buscar nutriólogo.</p>
-          </div>
-          <table class="tabla-oms">
-            <caption class="sr-only">Categorías de IMC de la OMS</caption>
-            <thead><tr><th scope="col">Categoría (OMS)</th><th scope="col">IMC</th></tr></thead>
-            <tbody>
-              <tr><td><span class="punto p-bajo"></span>Bajo peso</td><td>Menos de 18.5</td></tr>
-              <tr><td><span class="punto p-normal"></span>Peso normal</td><td>18.5 a 24.9</td></tr>
-              <tr><td><span class="punto p-sobrepeso"></span>Sobrepeso</td><td>25 a 29.9</td></tr>
-              <tr><td><span class="punto p-obesidad"></span>Obesidad</td><td>30 o más</td></tr>
-            </tbody>
-          </table>
-          <div class="imc-formula">
-            <p>IMC = peso (kg) ÷ estatura (m)²</p>
-          </div>
+      <div class="contenedor">
+        <div class="seccion-cabeza" data-revelar>
+          <h2 id="imc-titulo">Calcula tu IMC</h2>
+          <p>Sin registro. Con tu resultado te sugerimos un objetivo para buscar nutriólogo.</p>
         </div>
-
-        <div class="imc-tarjeta" data-revelar style="--retraso:.1s">
+        <div class="imc-tarjeta" data-revelar>
           <form class="imc-form" id="imc-form" novalidate>
             <div class="rejilla-campos">
               <div class="campo">
@@ -141,6 +118,12 @@
             <button type="submit" class="btn btn-primario btn-lg btn-bloque">Calcular IMC</button>
           </form>
           <div class="imc-salida" id="imc-salida" hidden aria-live="polite"></div>
+          <ul class="imc-leyenda" aria-label="Categorías de IMC de la OMS">
+            <li><span class="punto p-bajo"></span>Bajo peso <b>&lt; 18.5</b></li>
+            <li><span class="punto p-normal"></span>Normal <b>18.5 a 24.9</b></li>
+            <li><span class="punto p-sobrepeso"></span>Sobrepeso <b>25 a 29.9</b></li>
+            <li><span class="punto p-obesidad"></span>Obesidad <b>30 o más</b></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -149,54 +132,51 @@
     <section class="seccion" id="nutriologos" aria-labelledby="planes-titulo">
       <div class="contenedor">
         <div class="seccion-cabeza" data-revelar>
-          <h2 id="planes-titulo">Para nutriólogos: una suscripción, todo tu consultorio</h2>
-          <p>Solo el nutriólogo paga. Perfil verificado, agenda, expediente digital y visibilidad ante pacientes nuevos en cualquier plan.</p>
+          <h2 id="planes-titulo">Para nutriólogos</h2>
+          <p>Perfil verificado, agenda y expediente digital en una sola suscripción. Solo paga el nutriólogo.</p>
         </div>
         <div class="planes" id="planes"></div>
-        <p class="nota-precios"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Precios de ejemplo para el prototipo. No se realiza ningún cobro.</p>
+        <p class="nota-precios"><span data-ico="info"></span>Precios de ejemplo para el prototipo. No se realiza ningún cobro.</p>
       </div>
     </section>
 
     <!-- VENTAJAS -->
-    <section class="seccion" id="ventajas" aria-labelledby="ventajas-titulo" style="padding-top:0">
+    <section class="seccion" id="ventajas" aria-labelledby="ventajas-titulo">
       <div class="contenedor">
         <div class="seccion-cabeza" data-revelar>
           <h2 id="ventajas-titulo">Por qué NutriMatch</h2>
-          <p>Hecha para una sola cosa: que encuentres al profesional de la nutrición que necesitas y que él pueda atenderte bien.</p>
         </div>
-        <div class="ventajas" data-revelar>
-          <article class="ventaja">
-            <span class="ventaja-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14z"/><path d="M5 19l7-7"/></svg></span>
+        <div class="ventajas">
+          <article class="ventaja" data-revelar>
+            <span class="ventaja-ico"><span data-ico="hoja"></span></span>
             <h3>Solo nutrición</h3>
-            <p>No es un directorio médico general: cada perfil es de un profesional de la nutrición.</p>
+            <p>Cada perfil es de un profesional de la nutrición.</p>
           </article>
-          <article class="ventaja">
-            <span class="ventaja-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+          <article class="ventaja" data-revelar style="--retraso:.08s">
+            <span class="ventaja-ico"><span data-ico="mira"></span></span>
             <h3>Filtro por objetivo</h3>
-            <p>Buscas por lo que quieres lograr, como bajar de peso o controlar tu glucosa, no por términos técnicos.</p>
+            <p>Buscas por lo que quieres lograr, no por términos técnicos.</p>
           </article>
-          <article class="ventaja">
-            <span class="ventaja-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+          <article class="ventaja" data-revelar style="--retraso:.16s">
+            <span class="ventaja-ico"><span data-ico="escudo"></span></span>
             <h3>Cédula verificada</h3>
-            <p>La insignia Verificado indica que revisamos la cédula profesional del nutriólogo antes de mostrarlo.</p>
+            <p>Revisamos la cédula antes de mostrar el perfil.</p>
           </article>
-          <article class="ventaja">
-            <span class="ventaja-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-            <h3>Agenda y expediente juntos</h3>
-            <p>El nutriólogo lleva citas y expedientes con una sola suscripción, sin pagar otro software.</p>
+          <article class="ventaja" data-revelar style="--retraso:.24s">
+            <span class="ventaja-ico"><span data-ico="calendario"></span></span>
+            <h3>Todo en una suscripción</h3>
+            <p>Agenda y expediente sin pagar otro software.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- CIERRE -->
-    <section class="seccion" style="padding-top:0" aria-labelledby="cierre-titulo">
+    <section class="seccion seccion-cierre" aria-labelledby="cierre-titulo">
       <div class="contenedor">
-        <div class="cierre sobre-oscuro" data-revelar>
-          <div>
-            <h2 id="cierre-titulo">Prueba la demo con los dos roles</h2>
-            <p>Entra como paciente para agendar una cita y después como nutrióloga para verla llegar a su agenda.</p>
-          </div>
+        <div class="cierre" data-revelar>
+          <h2 id="cierre-titulo">Prueba la demo con los dos roles</h2>
+          <p>Agenda como paciente y mira cómo llega la cita a la agenda de la nutrióloga.</p>
           <div class="cierre-acciones">
             <button type="button" class="btn btn-naranja btn-lg" data-abrir-acceso data-correo="usuario@gmail.com">Entrar como usuario</button>
             <button type="button" class="btn btn-claro btn-lg" data-abrir-acceso data-correo="nutriologo@gmail.com">Entrar como nutriólogo</button>
@@ -208,68 +188,47 @@
 
   <footer class="pie">
     <div class="contenedor">
-      <div>
-        <span data-logo></span>
-        <p class="mt-2">Proyecto escolar para la materia Cultura Empresarial, Instituto Tecnológico de Tepic.</p>
-        <p>Prototipo de demostración: datos ficticios, sesión simulada, sin base de datos.</p>
-      </div>
-      <div class="pie-acciones">
-        <button type="button" class="btn btn-fantasma btn-sm" data-reiniciar-demo>
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>Reiniciar demo
-        </button>
-      </div>
+      <span data-logo></span>
+      <p>Proyecto escolar para Cultura Empresarial, Instituto Tecnológico de Tepic.<br>Prototipo de demostración: datos ficticios, sesión simulada, sin base de datos.</p>
+      <button type="button" class="btn btn-fantasma btn-sm" data-reiniciar-demo><span data-ico="reiniciar"></span>Reiniciar demo</button>
     </div>
   </footer>
 
   <!-- ACCESO SIMULADO -->
   <div class="acceso" id="acceso" role="dialog" aria-modal="true" aria-labelledby="acceso-titulo" aria-hidden="true" inert>
-    <button type="button" class="btn-icono acceso-cerrar" id="acceso-cerrar" aria-label="Cerrar inicio de sesión">
-      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-    <aside class="acceso-lado sobre-oscuro">
+    <button type="button" class="btn-icono acceso-cerrar" id="acceso-cerrar" aria-label="Cerrar inicio de sesión"><span data-ico="cerrar"></span></button>
+    <div class="acceso-caja">
       <span data-logo></span>
-      <div class="acceso-frase">
-        <h2>Tu próxima cita, con el nutriólogo correcto</h2>
-        <p>Cada rol ve una plataforma distinta: el paciente busca y agenda; el nutriólogo administra su consultorio.</p>
+      <div>
+        <h1 id="acceso-titulo">Iniciar sesión</h1>
+        <p class="bajada">Acceso simulado: escribe el correo, sin contraseña.</p>
       </div>
-      <div class="acceso-roles">
-        <div class="acceso-rol"><span class="rol-punto" style="background:#3FA56B"></span><div><strong>usuario@gmail.com</strong><span>Busca, agenda y califica</span></div></div>
-        <div class="acceso-rol"><span class="rol-punto" style="background:#5FB0C9"></span><div><strong>nutriologo@gmail.com</strong><span>Agenda, expedientes y suscripción</span></div></div>
-      </div>
-    </aside>
-    <div class="acceso-principal">
-      <div class="acceso-caja">
-        <div>
-          <h1 id="acceso-titulo">Iniciar sesión</h1>
-          <p class="bajada">Acceso simulado: solo escribe el correo, no hay contraseña.</p>
+      <div id="acceso-aviso" class="nota-demo" hidden></div>
+      <form id="form-acceso" class="form-acceso" novalidate>
+        <div class="campo">
+          <label for="acceso-correo">Correo electrónico</label>
+          <input id="acceso-correo" name="correo" type="email" inputmode="email" autocomplete="email" placeholder="tucorreo@gmail.com" spellcheck="false" autocapitalize="off">
         </div>
-        <div id="acceso-aviso" class="nota-demo" hidden></div>
-        <form id="form-acceso" class="pila" novalidate style="gap:14px">
-          <div class="campo">
-            <label for="acceso-correo">Correo electrónico</label>
-            <input id="acceso-correo" name="correo" type="email" inputmode="email" autocomplete="email" placeholder="tucorreo@gmail.com" spellcheck="false" autocapitalize="off">
-          </div>
-          <div id="acceso-error" role="alert"></div>
-          <button type="submit" class="btn btn-primario btn-lg btn-bloque btn-entrando" id="acceso-enviar">
-            <svg class="ico ico-carga" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.2-8.6"/></svg>
-            <span>Entrar</span>
-          </button>
-        </form>
-        <div class="atajos">
-          <p class="atajos-titulo">o usa una cuenta de demo</p>
-          <button type="button" class="atajo atajo-u" data-atajo="usuario@gmail.com">
-            <span class="rol-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></span>
-            <span><strong>Entrar como usuario</strong><small>Sofía, paciente</small></span>
-            <svg class="ico ico-der" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
-          <button type="button" class="atajo atajo-n" data-atajo="nutriologo@gmail.com">
-            <span class="rol-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
-            <span><strong>Entrar como nutriólogo</strong><small>Lic. Carolina Méndez Rojas</small></span>
-            <svg class="ico ico-der" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-        <p class="texto-suave" style="font-size:.85rem">Prototipo de demostración: sesión simulada, sin base de datos.</p>
+        <div id="acceso-error" role="alert"></div>
+        <button type="submit" class="btn btn-primario btn-lg btn-bloque btn-entrando" id="acceso-enviar">
+          <svg class="ico ico-carga" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.2-8.6"/></svg>
+          <span>Entrar</span>
+        </button>
+      </form>
+      <div class="atajos">
+        <p class="atajos-titulo">o usa una cuenta de demo</p>
+        <button type="button" class="atajo atajo-u" data-atajo="usuario@gmail.com">
+          <span class="rol-ico"><span data-ico="usuario"></span></span>
+          <span><strong>Entrar como usuario</strong><small>usuario@gmail.com</small></span>
+          <span data-ico="der" class="ico-der"></span>
+        </button>
+        <button type="button" class="atajo atajo-n" data-atajo="nutriologo@gmail.com">
+          <span class="rol-ico"><span data-ico="expediente"></span></span>
+          <span><strong>Entrar como nutriólogo</strong><small>nutriologo@gmail.com</small></span>
+          <span data-ico="der" class="ico-der"></span>
+        </button>
       </div>
+      <p class="acceso-nota">Prototipo de demostración: sesión simulada, sin base de datos.</p>
     </div>
   </div>
 

@@ -410,7 +410,9 @@
       };
       if (conTransicion && cambiaVista && !reducirMovimiento) {
         if (document.startViewTransition) {
-          document.startViewTransition(hacer);
+          var t = document.startViewTransition(hacer);
+          // Si se navega muy rápido, el navegador salta la transición: no es un error
+          ['ready', 'finished', 'updateCallbackDone'].forEach(function (k) { if (t[k]) t[k].catch(function () {}); });
         } else {
           hacer();
           contenedor.classList.remove('vista-entra');
@@ -466,6 +468,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     $$('[data-anio]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
     $$('[data-logo]').forEach(function (el) { el.innerHTML = logo(true); });
+    $$('[data-ico]').forEach(function (el) { el.outerHTML = icono(el.getAttribute('data-ico'), el.className); });
     enlazarReinicio(document);
     avisoPendiente();
   });

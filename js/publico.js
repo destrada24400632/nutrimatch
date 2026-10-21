@@ -19,7 +19,7 @@
   if (rol) {
     var destino = NM.auth.paginaDe(rol);
     var texto = rol === 'nutriologo' ? 'Ir a mi consultorio' : 'Ir a mi panel';
-    $('#cabecera-accion').innerHTML = '<a class="btn btn-secundario btn-entrar" href="' + destino + '">' + texto + '</a>';
+    $('#cabecera-accion').innerHTML = '<a class="btn btn-primario btn-sm btn-entrar" href="' + destino + '">' + texto + '</a>';
     var heroBtn = $('[data-hero-accion]');
     if (heroBtn) {
       var a = document.createElement('a');
@@ -30,11 +30,19 @@
     }
   }
 
+  /* ------------------------------------- Títulos que entran palabra por palabra */
+  $$('[data-palabras]').forEach(function (el) {
+    var palabras = el.textContent.trim().split(/\s+/);
+    el.setAttribute('aria-label', el.textContent.trim());
+    el.innerHTML = palabras.map(function (p, i) {
+      return '<span class="palabra" aria-hidden="true" style="--i:' + i + '">' + ui.esc(p) + '</span>';
+    }).join(' ');
+  });
+
   /* ---------------------------------------------------- Hero: "match" */
   var PAREJAS = { 'bajar-peso': 1, 'ganar-masa': 5, 'deportiva': 2, 'enfermedades': 3, 'general': 6 };
   var listaObj = $('#match-objetivos');
   var cuerpo = $('#match-cuerpo');
-  var hilo = $('#match-hilo');
   var match = $('#match');
   var indice = 0, temporizador = null;
 
@@ -64,30 +72,6 @@
       '<div class="mt-pie"><span>' + ui.esc(n.zona) + ', a ' + ui.decimal(n.distanciaKm) + ' km</span><strong>' + ui.dinero(n.precio) + '</strong></div>';
   }
 
-  function dibujarHilo(animar) {
-    var activo = listaObj.children[indice];
-    var tarjeta = match.querySelector('.match-tarjeta');
-    if (!activo || getComputedStyle(hilo).display === 'none') return;
-    var base = match.getBoundingClientRect();
-    var a = activo.getBoundingClientRect();
-    var t = tarjeta.getBoundingClientRect();
-    var x1 = a.right - base.left + 4, y1 = a.top + a.height / 2 - base.top;
-    var x2 = t.left - base.left - 2, y2 = t.top + t.height / 2 - base.top;
-    var mx = (x1 + x2) / 2;
-    var d = 'M' + x1 + ' ' + y1 + ' C' + mx + ' ' + y1 + ', ' + mx + ' ' + y2 + ', ' + x2 + ' ' + y2;
-    var path = hilo.querySelector('path');
-    var punto = hilo.querySelector('circle');
-    path.setAttribute('d', d);
-    punto.setAttribute('cx', x2);
-    punto.setAttribute('cy', y2);
-    if (animar && !ui.reducirMovimiento && path.animate) {
-      var largo = path.getTotalLength();
-      path.animate([{ strokeDashoffset: largo, strokeDasharray: largo + ' ' + largo }, { strokeDashoffset: 0, strokeDasharray: largo + ' ' + largo }],
-        { duration: 650, easing: 'cubic-bezier(.22,.8,.24,1)' });
-      punto.animate([{ r: 0 }, { r: 0, offset: .7 }, { r: 6 }, { r: 4 }], { duration: 900, easing: 'ease-out' });
-    }
-  }
-
   function seleccionar(i, animar) {
     indice = i;
     var obj = D.OBJETIVOS[i];
@@ -97,7 +81,6 @@
       cuerpo.className = 'mt-cuerpo';
       cuerpo.innerHTML = htmlTarjeta(n);
       if (animar) { void cuerpo.offsetWidth; cuerpo.classList.add('entra'); }
-      dibujarHilo(animar);
     };
     if (animar && !ui.reducirMovimiento && cuerpo.innerHTML) {
       cuerpo.classList.add('sale');
@@ -129,9 +112,8 @@
   });
   match.addEventListener('mouseenter', function () { clearInterval(temporizador); });
   match.addEventListener('mouseleave', ciclo);
-  window.addEventListener('resize', function () { dibujarHilo(false); });
 
-  setTimeout(function () { seleccionar(0, true); ciclo(); }, ui.reducirMovimiento ? 0 : 450);
+  setTimeout(function () { seleccionar(0, true); ciclo(); }, ui.reducirMovimiento ? 0 : 900);
 
   /* ---------------------------------------------------------------- IMC */
   NM.imc.montar({
@@ -171,7 +153,7 @@
         (ahorro > 0
           ? '<span class="plan-ahorro">' + ui.icono('check') + 'Ahorras ' + ui.dinero(ahorro) + ' (' + ui.dinero(porMes) + ' al mes)</span>'
           : '<span class="plan-ahorro neutro">Pago mes a mes</span>') +
-        '<ul class="plan-lista">' + D.CONFIG.incluye.map(function (t) { return '<li>' + ui.icono('check') + '<span>' + ui.esc(t) + '</span></li>'; }).join('') + '</ul>' +
+        '<ul class="plan-lista">' + D.CONFIG.incluye.slice(0, 4).map(function (t) { return '<li>' + ui.icono('check') + '<span>' + ui.esc(t) + '</span></li>'; }).join('') + '</ul>' +
         '<button type="button" class="btn ' + (destacado ? 'btn-naranja' : 'btn-secundario') + ' btn-bloque" data-abrir-acceso data-correo="nutriologo@gmail.com">Probar la vista de nutriólogo</button>' +
         '</article>';
     }).join('');
