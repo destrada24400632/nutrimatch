@@ -15,9 +15,9 @@
   var CONFIG = {
     moneda: 'MXN',
     planes: [
-      { id: 'mensual',   nombre: 'Mensual',   meses: 1,  precio: 449 },
-      { id: 'semestral', nombre: 'Semestral', meses: 6,  precio: 2290 },
-      { id: 'anual',     nombre: 'Anual',     meses: 12, precio: 3990 }
+      { id: 'mensual',   nombre: 'Mensual',   meses: 1,  precio: 299 },
+      { id: 'semestral', nombre: 'Semestral', meses: 6,  precio: 1499 },
+      { id: 'anual',     nombre: 'Anual',     meses: 12, precio: 2699 }
     ],
     // Lo que incluye cualquier plan (la diferencia es el precio y la duración)
     incluye: [
